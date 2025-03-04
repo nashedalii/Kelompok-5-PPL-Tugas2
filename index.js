@@ -100,7 +100,7 @@ function handleMenu(choice) {
             });
             break;
         case '5':
-            console.log("Terima kasih telah menggunakan program ini!");
+            console.log("Terima kasih telah menggunakan aplikasi sederhana ini!");
             rl.close();
             break;
         default:
