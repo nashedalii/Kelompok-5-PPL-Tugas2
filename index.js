@@ -1,5 +1,7 @@
 const fs = require('fs');
 const readline = require('readline');
+const chalk = require('chalk');
+const figlet = require('figlet');
 
 const FILE_PATH = 'database.json';
 
@@ -22,14 +24,15 @@ const rl = readline.createInterface({
 });
 
 function showMenu() {
-    console.log("\nHalo, selamat datang di Database Pembalap F1");
-    console.log("Pilih aksi:");
-    console.log("1. Lihat daftar pembalap");
-    console.log("2. Tambah pembalap");
-    console.log("3. Update pembalap");
-    console.log("4. Hapus pembalap");
-    console.log("5. Keluar");
-    rl.question("Masukkan nomor: ", (answer) => {
+    console.log(chalk.cyan(figlet.textSync('F1 Database', { horizontalLayout: 'full' })));
+    console.log(chalk.yellow("\nHalo, selamat datang di Database Pembalap F1"));
+    console.log(chalk.green("Pilih aksi:"));
+    console.log(chalk.blue("1. Lihat daftar pembalap"));
+    console.log(chalk.blue("2. Tambah pembalap"));
+    console.log(chalk.blue("3. Update pembalap"));
+    console.log(chalk.blue("4. Hapus pembalap"));
+    console.log(chalk.red("5. Keluar"));
+    rl.question(chalk.magenta("Masukkan nomor: "), (answer) => {
         handleMenu(answer);
     });
 }
@@ -38,20 +41,20 @@ function handleMenu(choice) {
     const database = loadDatabase();
     switch (choice) {
         case '1':
-            console.log("\nDaftar Pembalap F1:");
+            console.log(chalk.yellow("\nDaftar Pembalap F1:"));
             database.forEach((item, index) => {
-                console.log(`${index + 1}. ${JSON.stringify(item)}`);
+                console.log(chalk.cyan(`${index + 1}. ${JSON.stringify(item, null, 2)}`));
             });
             showMenu();
             break;
         case '2':
-            rl.question("Masukkan nama pembalap: ", (name) => {
-                rl.question("Masukkan kebangsaan: ", (nationality) => {
-                    rl.question("Masukkan nomor mobil: ", (carNumber) => {
-                        rl.question("Masukkan merk mobil: ", (carBrand) => {
+            rl.question(chalk.green("Masukkan nama pembalap: "), (name) => {
+                rl.question(chalk.green("Masukkan kebangsaan: "), (nationality) => {
+                    rl.question(chalk.green("Masukkan nomor mobil: "), (carNumber) => {
+                        rl.question(chalk.green("Masukkan merk mobil: "), (carBrand) => {
                             database.push({ name, nationality, carNumber: parseInt(carNumber), carBrand });
                             saveDatabase(database);
-                            console.log("Pembalap berhasil ditambahkan!");
+                            console.log(chalk.blue("Pembalap berhasil ditambahkan!"));
                             showMenu();
                         });
                     });
@@ -59,25 +62,25 @@ function handleMenu(choice) {
             });
             break;
         case '3':
-            rl.question("Masukkan nomor mobil pembalap yang ingin diupdate: ", (carNumber) => {
-                const carNum = parseInt(carNumber); 
+            rl.question(chalk.green("Masukkan nomor mobil pembalap yang ingin diupdate: "), (carNumber) => {
+                const carNum = parseInt(carNumber);
                 const index = database.findIndex(i => i.carNumber === carNum);
                 if (index === -1) {
-                    console.log("Pembalap tidak ditemukan!");
+                    console.log(chalk.red("Pembalap tidak ditemukan!"));
                     return showMenu();
                 }
-                rl.question("Masukkan nama baru: ", (name) => {
-                    rl.question("Masukkan kebangsaan baru: ", (nationality) => {
-                        rl.question("Masukkan nomor mobil baru: ", (newCarNumber) => {
-                            rl.question("Masukkan merk mobil baru: ", (carBrand) => {
+                rl.question(chalk.green("Masukkan nama baru: "), (name) => {
+                    rl.question(chalk.green("Masukkan kebangsaan baru: "), (nationality) => {
+                        rl.question(chalk.green("Masukkan nomor mobil baru: "), (newCarNumber) => {
+                            rl.question(chalk.green("Masukkan merk mobil baru: "), (carBrand) => {
                                 database[index] = {
                                     name,
                                     nationality,
-                                    carNumber: parseInt(newCarNumber), 
+                                    carNumber: parseInt(newCarNumber),
                                     carBrand
                                 };
                                 saveDatabase(database);
-                                console.log("Pembalap berhasil diperbarui!");
+                                console.log(chalk.blue("Pembalap berhasil diperbarui!"));
                                 showMenu();
                             });
                         });
@@ -86,25 +89,25 @@ function handleMenu(choice) {
             });
             break;
         case '4':
-            rl.question("Masukkan nomor mobil pembalap yang ingin dihapus: ", (carNumber) => {
-                const carNum = parseInt(carNumber); 
+            rl.question(chalk.green("Masukkan nomor mobil pembalap yang ingin dihapus: "), (carNumber) => {
+                const carNum = parseInt(carNumber);
                 const index = database.findIndex(i => i.carNumber === carNum);
                 if (index === -1) {
-                    console.log("Pembalap tidak ditemukan!");
+                    console.log(chalk.red("Pembalap tidak ditemukan!"));
                 } else {
                     database.splice(index, 1);
                     saveDatabase(database);
-                    console.log("Pembalap berhasil dihapus!");
+                    console.log(chalk.blue("Pembalap berhasil dihapus!"));
                 }
                 showMenu();
             });
             break;
         case '5':
-            console.log("Terima kasih telah menggunakan aplikasi sederhana ini!");
+            console.log(chalk.yellow("Terima kasih telah menggunakan aplikasi sederhana ini!"));
             rl.close();
             break;
         default:
-            console.log("Pilihan tidak valid, coba lagi.");
+            console.log(chalk.red("Pilihan tidak valid, coba lagi."));
             showMenu();
             break;
     }
