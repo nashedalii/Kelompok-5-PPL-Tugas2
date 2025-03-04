@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Charles Leclerc",
+    "nationality": "Monako",
+    "carNumber": 16,
+    "carBrand": "Ferrari"
+  },
+  {
+    "name": "Carlos Sainz Jr.",
+    "nationality": "Spanyol",
+    "carNumber": 55,
+    "carBrand": "Williams"
+  },
+  {
+    "name": "Lewis Hamilton",
+    "nationality": "Inggris",
+    "carNumber": 44,
+    "carBrand": "Ferrari"
+  }
+]
