@@ -103,7 +103,7 @@ function handleMenu(choice) {
             });
             break;
         case '5':
-            console.log(chalk.yellow("Terima kasih telah menggunakan aplikasi sederhana ini!"));
+            console.log(chalk.yellow("Terima kasih telah menggunakan program ini!"));
             rl.close();
             break;
         default:
