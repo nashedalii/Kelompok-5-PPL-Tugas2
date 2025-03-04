@@ -1,9 +1,105 @@
 [
   {
+    "name": "Max Verstappen",
+    "nationality": "Belanda",
+    "carNumber": 1,
+    "carBrand": "Red Bull Racing"
+  },
+  {
+    "name": "Liam Lawson",
+    "nationality": "Selandia Baru",
+    "carNumber": 30,
+    "carBrand": "Red Bull Racing"
+  },
+  {
     "name": "Charles Leclerc",
     "nationality": "Monako",
     "carNumber": 16,
     "carBrand": "Ferrari"
+  },
+  {
+    "name": "Lewis Hamilton",
+    "nationality": "Inggris",
+    "carNumber": 44,
+    "carBrand": "Ferrari"
+  },
+  {
+    "name": "George Russell",
+    "nationality": "Inggris",
+    "carNumber": 63,
+    "carBrand": "Mercedes"
+  },
+  {
+    "name": "Andrea Kimi Antonelli",
+    "nationality": "Italia",
+    "carNumber": 12,
+    "carBrand": "Mercedes"
+  },
+  {
+    "name": "Lando Norris",
+    "nationality": "Inggris",
+    "carNumber": 4,
+    "carBrand": "McLaren"
+  },
+  {
+    "name": "Oscar Piastri",
+    "nationality": "Australia",
+    "carNumber": 81,
+    "carBrand": "McLaren"
+  },
+  {
+    "name": "Pierre Gasly",
+    "nationality": "Prancis",
+    "carNumber": 10,
+    "carBrand": "Alpine"
+  },
+  {
+    "name": "Jack Doohan",
+    "nationality": "Australia",
+    "carNumber": 7,
+    "carBrand": "Alpine"
+  },
+  {
+    "name": "Ollie Bearman",
+    "nationality": "Inggris",
+    "carNumber": 87,
+    "carBrand": "Haas"
+  },
+  {
+    "name": "Esteban Ocon",
+    "nationality": "Prancis",
+    "carNumber": 31,
+    "carBrand": "Haas"
+  },
+  {
+    "name": "Yuki Tsunoda",
+    "nationality": "Jepang",
+    "carNumber": 22,
+    "carBrand": "AlphaTauri"
+  },
+  {
+    "name": "Isack Hadjar",
+    "nationality": "Prancis",
+    "carNumber": 6,
+    "carBrand": "AlphaTauri"
+  },
+  {
+    "name": "Fernando Alonso",
+    "nationality": "Spanyol",
+    "carNumber": 14,
+    "carBrand": "Aston Martin"
+  },
+  {
+    "name": "Lance Stroll",
+    "nationality": "Kanada",
+    "carNumber": 18,
+    "carBrand": "Aston Martin"
+  },
+  {
+    "name": "Alexander Albon",
+    "nationality": "Thailand",
+    "carNumber": 23,
+    "carBrand": "Williams"
   },
   {
     "name": "Carlos Sainz Jr.",
@@ -12,9 +108,15 @@
     "carBrand": "Williams"
   },
   {
-    "name": "Lewis Hamilton",
-    "nationality": "Inggris",
-    "carNumber": 44,
-    "carBrand": "Ferrari"
+    "name": "Nico Hülkenberg",
+    "nationality": "Jerman",
+    "carNumber": 27,
+    "carBrand": "Sauber"
+  },
+  {
+    "name": "Gabriel Bortoleto",
+    "nationality": "Brasil",
+    "carNumber": 5,
+    "carBrand": "Sauber"
   }
 ]
